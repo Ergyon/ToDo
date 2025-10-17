@@ -49,7 +49,7 @@ const Task = ({ task, onComplete, onDelete }) => {
         ></button>
         <h3 className="task__title">{task.title}</h3>
         <div className="task__infos">
-          <span className={`task__badge priority--${task.priority}`}>
+          <span className={`task__badge priority-${task.priority}`}>
             {priorityLabels[task.priority] || priorityLabels.neutral}
           </span>
           {task.category && <span>{task.category}</span>}
