@@ -6,9 +6,9 @@
     font-family: 'Jost';
     background-color: white;
     border-radius: 30px;
-    height: auto;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    transition: 0.2s ease;
+    height: 4rem;
+    box-shadow: rgba(170, 164, 164, 0.12) 0px 1px 10px, rgba(148, 143, 143, 0.24) 0px 1px 20px;
+    transition: 0.2s ease-in-out;
 }
 .task:hover {
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -17,20 +17,24 @@
 .task__title {
     font-size: 1.2rem;
     font-weight: 500;
-    margin-inline: 1rem;
+    margin-left: 1rem;
 }
 
 .task__infos {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    margin-left: 2rem;
 }
 
 .task__deadline {
     text-align: center;
     margin: auto;
+    position: relative;
+}
+
+.overdue-icon {
+    margin-left: 1rem;
+    position: absolute;
+    bottom: 10px;
+    color: #810808;
 }
 
 .task__init-date {
@@ -69,21 +73,37 @@
     font-size: 14px;
     background: linear-gradient(170deg,rgba(252, 254, 255, 1) 0%, rgb(223, 211, 224) 100%);;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(112, 108, 108, 0.3) 0px 7px 8px -3px, rgba(87, 85, 85, 0.2) 0px -1px 0px inset;
 }    
 
+.task__category {
+    border-radius: 10px;
+    padding-inline: 8px;
+    padding-block: 2px;
+    font-size: 15px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
 
-
+.task__badge {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    margin-right: 3rem;
+    position: relative;
+    bottom: 15px;
+    left: 5px;
+}
 
 /* Couleurs selon la priorité */
-.task.priority-urgent {
-  border-left-color: #ef4444;
+.task__badge.priority-urgent {
+    background-color: #f81a1a;
 }
-.task.priority-high {
-  border-left-color: #f97316;
+.task__badge.priority-high {
+  background-color: hsl(34, 100%, 64%);
 }
-.task.priority-medium {
-  border-left-color: #a855f7; 
+.task__badge.priority-medium {
+  background-color: #a855f7; 
 }
-.task.priority-low {
-  border-left-color: #60a5fa; 
+.task__badge.priority-low {
+  background-color: #17c961; 
 }
