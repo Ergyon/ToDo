@@ -1,0 +1,36 @@
+.task {
+    display: flex;
+    width: 70%;
+    padding: 15px;
+    font-family: 'Jost';
+    background-color: white;
+    border-radius: 20px;
+    height: auto;
+    margin: auto;
+}
+
+.task__title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-inline: 1rem;
+}
+
+.task__infos {
+    border: 1px solid red;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    padding-inline: 15px;
+    padding-block: 10px;
+}
+
+.task__deadline {
+    text-align: center;
+    margin: auto;
+}
+
+.task__init-date {
+    margin-left: auto;
+}
