@@ -1,11 +1,12 @@
+import { Check, ClockAlert, Trash2 } from "lucide-react"
 import "./Task.css"
 
 const Task = ({ task, onComplete, onDelete }) => {
   const priorityLabels = {
-    urgent: "Urgent",
-    high: "Haute",
-    medium: "Moyenne",
-    low: "Basse",
+    urgent: "",
+    high: "",
+    medium: "",
+    low: "",
     neutral: ""
   }
 
@@ -47,20 +48,27 @@ const Task = ({ task, onComplete, onDelete }) => {
           title="Terminer"
           onClick={() => onComplete(task.id)}
         >
-          ✓
+          <Check size={18} />
         </button>
+
         <h3 className="task__title">{task.title}</h3>
         <div className="task__infos">
           <span className={`task__badge priority-${task.priority}`}>
             {priorityLabels[task.priority] || priorityLabels.neutral}
           </span>
-          {task.category && <span>{task.category}</span>}
+          {task.category && (
+            <span className="task__category">{task.category}</span>
+          )}
         </div>
 
         {task.deadline && (
           <div className={`task__deadline ${isOverdue() ? "overdue" : ""}`}>
             <span>{deadlineFormat(task.deadline)}</span>
-            {isOverdue() && <span className="overdue-icon">⚠️</span>}
+            {isOverdue() && (
+              <span className="overdue-icon">
+                <ClockAlert size={25} />
+              </span>
+            )}
           </div>
         )}
 
@@ -73,7 +81,7 @@ const Task = ({ task, onComplete, onDelete }) => {
           title="Supprimer"
           onClick={() => onDelete(task.id)}
         >
-          ✕
+          <Trash2 size={18} />
         </button>
       </div>
     </div>
