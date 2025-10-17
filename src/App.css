@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&family=Jost:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=Playwrite+US+Modern:wght@100..400&display=swap');
+
+.app {
+    height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, #bd6fae85 100%);
+}
+
+.app__header h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 1rem;
+    font-size: 3rem;
+    font-family: 'Playwrite US Modern';
+    margin-bottom: 4.5rem;
+}
+
