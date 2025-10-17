@@ -43,10 +43,12 @@ const Task = ({ task, onComplete, onDelete }) => {
     <div className={`task--${task.priority}`}>
       <div className="task">
         <button
-          className="task__doneBtn"
+          className="task__doneBtn btn"
           title="Terminer"
           onClick={() => onComplete(task.id)}
-        ></button>
+        >
+          ✓
+        </button>
         <h3 className="task__title">{task.title}</h3>
         <div className="task__infos">
           <span className={`task__badge priority-${task.priority}`}>
@@ -67,10 +69,12 @@ const Task = ({ task, onComplete, onDelete }) => {
           <span>{formatCreateDate(task.createdAt)}</span>
         </div>
         <button
-          className="task__delBtn"
+          className="task__delBtn btn"
           title="Supprimer"
           onClick={() => onDelete(task.id)}
-        ></button>
+        >
+          ✕
+        </button>
       </div>
     </div>
   )
