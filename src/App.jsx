@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./App.css"
-import Task from "./components/Task/Task"
+import TaskList from "./components/TaskList/TaskList"
 
 const App = () => {
   const [tasks, setTasks] = useState([
@@ -53,26 +53,11 @@ const App = () => {
       </header>
 
       <main className="app__main">
-        <div className="app__tasks">
-          {tasks.map((task) => (
-            <Task
-              key={task.id}
-              task={task}
-              onComplete={handleComplete}
-              onDelete={handleDelete}
-            />
-          ))}
-        </div>
-
-        {/* si aucune tache */}
-        {tasks.length === 0 && (
-          <div className="app__empty">
-            <p>
-              Tu n'as aucune tâche pour le moment, tu peux profiter de ta
-              journée ! 🌟
-            </p>
-          </div>
-        )}
+        <TaskList
+          tasks={tasks}
+          onComplete={handleComplete}
+          onDelete={handleDelete}
+        />
       </main>
     </div>
   )
